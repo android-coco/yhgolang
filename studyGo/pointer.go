@@ -10,10 +10,10 @@ func main() {
 
     ip = &a;  /* 指针变量的存储地址 */
 
-    fmt.Printf("a 变量的地址是: %x\n", &a  );
+    fmt.Printf("a 变量的地址是: %x1\n", &a  );
 
     /* 指针变量的存储地址 */
-    fmt.Printf("ip 变量储存的指针地址: %x\n", ip );
+    fmt.Printf("ip 变量储存的指针地址: %x1\n", ip );
 
     /* 使用指针访问值 */
     fmt.Printf("*ip 变量的值: %d\n", *ip );
@@ -22,7 +22,7 @@ func main() {
 
     var ipx *int;
 
-    fmt.Printf("ipx 的值为 : %x\n", ipx);
+    fmt.Printf("ipx 的值为 : %x1\n", ipx);
     fmt.Printf("ipx 的值为 : %t\n", ipx == nil);
 
     fmt.Printf("============指针数组===============\n");
@@ -71,17 +71,17 @@ func main() {
    var x int = 100;
    var y int = 200;
 
-   fmt.Printf("替换前 x = %d\n", x);
-   fmt.Printf("替换前 y = %d\n", y);   
+   fmt.Printf("替换前 x1 = %d\n", x);
+   fmt.Printf("替换前 y1 = %d\n", y);
 
    /* 调用函数用于交换值
-   * &x 指向 x 变量的地址
-   * &y 指向 y 变量的地址
+   * &x1 指向 x1 变量的地址
+   * &y1 指向 y1 变量的地址
    */
    swap(&x , &y);
 
-   fmt.Printf("替换后 x = %d\n", x);
-   fmt.Printf("替换后 y = %d\n", y);
+   fmt.Printf("替换后 x1 = %d\n", x);
+   fmt.Printf("替换后 y1 = %d\n", y);
 
 }
 

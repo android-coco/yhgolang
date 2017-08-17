@@ -13,19 +13,19 @@ type (
 )
 
 const (
-	a1 int = 1
-	b1     = 'A'
+	a11 int = 1
+	b1      = 'A'
 	c1
 	d1
 )
 
 const (
-	k, u = 1, "2"
+	k2, u  = 1, "2"
 	k1, u1
 )
 
 //常量只能引用常量和内置函数
-const x, y, z = 1, "2", true
+const x1, y1, z = 1, "2", true
 const (
 	z1 = 'A'
 	z2
@@ -79,8 +79,8 @@ func main() {
 	std.Println(e) //A  字符
 	std.Println(f) //65 字符串
 	std.Println(g) //65 int
-	std.Println(a1, b1, x, y, z, c1, d1)
-	std.Println(k, u, k1, u1)
+	std.Println(a11, b1, x1, y1, z, c1, d1)
+	std.Println(k2, u, k1, u1)
 	std.Println("==================")
 	std.Println(z1, z2, z3, z4)
 	std.Println("==================")

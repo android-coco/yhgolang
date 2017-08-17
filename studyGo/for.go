@@ -18,7 +18,7 @@ func main() {
 	}
 
 	for i,x := range numbers {
-		fmt.Printf("第 %d 位 x 的值 = %d\n", i,x);
+		fmt.Printf("第 %d 位 x1 的值 = %d\n", i,x);
 	}
 	println("=====================================================");
 	var C, c int;//声明变量

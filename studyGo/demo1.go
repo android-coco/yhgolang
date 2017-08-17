@@ -31,7 +31,7 @@ func main() {
 	 var a1 string = "abc"
 	/* 这是我的一个简单的程序 */
 	 println(x, y, a, b, c, d, e, f, g, h,a1,YH);
-	 //fmt.Println(x, y, a, b, c, d, e, f, g, h);
+	 //fmt.Println(x1, y1, a, b, c, d, e, f, g, h);
 	
 	   const LENGTH int = 10;
 	   const WIDTH int = 5;
@@ -44,6 +44,6 @@ func main() {
 	   println(a1, b2, c3);
 	   fmt.Println("i=",i);
 	   fmt.Println("j=",j);
-	   fmt.Println("k=",k);
+	   fmt.Println("k2=",k);
 	   fmt.Println("l=",l);
 }

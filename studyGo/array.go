@@ -10,13 +10,13 @@ var balance = [...]float32{1000.0, 2.0, 3.4, 7.0, 50.0};
 var balance1 = []float64{1000.0, 2.0, 3.4, 7.0, 50.0};
 func main() {
 	for i , a := range array1 {
-		fmt.Printf("第 %d 位 x 的值 = %d\n", i,a);
+		fmt.Printf("第 %d 位 x1 的值 = %d\n", i,a);
 	}
 	for i , a := range balance {
-		fmt.Printf("第 %d 位 x 的值 = %f\n", i,a);
+		fmt.Printf("第 %d 位 x1 的值 = %f\n", i,a);
 	}
 
 	for i , a := range balance1 {
-		fmt.Printf("第 %d 位 x 的值 = %f\n", i,a);
+		fmt.Printf("第 %d 位 x1 的值 = %f\n", i,a);
 	}
 }
