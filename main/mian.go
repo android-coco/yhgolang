@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"or.yh/util"//引用自己的包
+	"awesomeProject/org.yh/util"//引用自己的包
 )
 
 type NokiaPhone struct {
