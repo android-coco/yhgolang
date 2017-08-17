@@ -12,24 +12,24 @@ type Iphone struct {
 }
 
 type I_Phone interface {
-	call()
-	sms()
+	call();
+	sms();
 }
 
 func (iphone Iphone) call() {
-	fmt.Println("my is Iphone call")
+	fmt.Println("my is Iphone call");
 }
 
 func (iphone NokiaPhone) sms() {
-	fmt.Println("my is NokiaPhone sms")
+	fmt.Println("my is NokiaPhone sms");
 }
 
 func (iphone NokiaPhone) call() {
-	fmt.Println("my is NokiaPhone call")
+	fmt.Println("my is NokiaPhone call");
 }
 
 func (iphone Iphone) sms() {
-	fmt.Println("my is Iphone sms")
+	fmt.Println("my is Iphone sms");
 }
 
 func main() {
