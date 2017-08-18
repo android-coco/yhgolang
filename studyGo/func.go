@@ -36,6 +36,49 @@ func main() {
 	nextNumber1 := getSequence()
 	fmt.Println(nextNumber1())
 	fmt.Println(nextNumber1())
+	d := A
+	d(a, b)
+	//匿名函数
+	e := func() {
+		fmt.Println("匿名函数")
+	}
+	e()
+
+	f := closure(10)
+	fmt.Println(f(1))
+	fmt.Println(f(2))
+	//a,c,b 执行顺序相反
+	fmt.Println("a")
+	defer fmt.Println("b")
+	defer fmt.Println("c")
+
+	for i := 0; i < 3; i++ {
+		//2,1,0
+		defer fmt.Println(i)
+	}
+	for i := 0; i < 3; i++ {
+		defer func() {
+			//3,3,3
+			fmt.Println(i)
+		}()
+	}
+	J()
+	K()
+	L()
+}
+func J() {
+	fmt.Println("Func J")
+}
+func K() {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println("RECOVER IN K")
+		}
+	}()
+	panic("Panic in K")
+}
+func L() {
+	fmt.Println("Func C")
 }
 
 /* 函数作为返回值 */
@@ -60,4 +103,20 @@ func max(num1 int, num2 int) int {
 //返回多个值(交换)
 func swap(x string, y string) (string, string) {
 	return y, x
+}
+
+func A(a ...int) {
+	fmt.Println(a)
+}
+func B() {
+
+}
+
+//返回值为函数  闭包
+func closure(x int) func(int) int {
+	fmt.Printf("%p\n", &x)
+	return func(y int) int {
+		fmt.Printf("%p\n", &x)
+		return x + y
+	}
 }
