@@ -16,7 +16,7 @@ func main() {
 
 	fmt.Printf("最大值是 : %d\n", ret)
 
-	a1, b2 := swap("Mahesh", "Kumar")
+	a1, b2 := swapq("Mahesh", "Kumar")
 	fmt.Println(a1, b2)
 	fmt.Println("======声明函数变量========")
 	/* 声明函数变量 */
@@ -101,7 +101,7 @@ func max(num1 int, num2 int) int {
 }
 
 //返回多个值(交换)
-func swap(x string, y string) (string, string) {
+func swapq(x string, y string) (string, string) {
 	return y, x
 }
 
