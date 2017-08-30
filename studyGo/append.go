@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "awesomeProject/org.yh/util"
 	"fmt"
 )
 
