@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func Test() int {
+	return 1
+}
+
 func init() {
 	fmt.Println("fadsfadsf")
 }

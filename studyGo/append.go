@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+	//util.Test()  编译报错，说：undefined: util in util.Test
+
 	/**
 			append主要用于给某个切片（slice）追加元素
 			如果该切片存储空间（cap）足够，就直接追加，长度（len）变长；
