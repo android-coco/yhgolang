@@ -2,7 +2,6 @@ package main
 
 import (
 	"awesomeProject/org.yh/util" //引用自己的包
-	"awesomeProject/studyG"
 	"fmt"
 )
 
@@ -77,5 +76,4 @@ func main() {
 	for v := range f1 {
 		fmt.Printf("[%s => %s]\n", v, f1[v])
 	}
-	pk.Add(1, 3)
 }
