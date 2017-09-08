@@ -5,19 +5,22 @@ import (
 	"reflect"
 )
 
+type X interface {
+	Hello1()
+}
 type User struct {
 	Id   int
 	Name string
 	Age  int
 }
 
-func (u User) Hello() {
+func (u User) Hello1() {
 	fmt.Println("Hello World")
 }
 
 func main() {
 	u := User{1, "yh", 28}
-	Info(u)
+	Info(X)
 }
 
 func Info(o interface{}) {
