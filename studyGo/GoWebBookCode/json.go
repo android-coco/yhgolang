@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"reflect"
 )
 
 var str = `
@@ -10,8 +11,8 @@ var str = `
 `
 
 type Server struct {
-	ServerName string
-	ServerIP   string
+	ServerName string `json:"servername" xorm:"extends"`
+	ServerIP   string `json:"serverip"`
 }
 
 type Serverslice struct {
@@ -22,4 +23,17 @@ func main() {
 	var s Serverslice
 	json.Unmarshal([]byte(str), &s)
 	fmt.Println(s)
+
+	s1 := Server{ServerName: "1", ServerIP: "192.168.0.1"}
+	j, _ := json.Marshal(s1)
+	fmt.Println(string(j))
+
+	// 获取tag中的内容
+	t := reflect.TypeOf(&s1)
+	field := t.Elem().Field(0)
+	fmt.Println(field.Tag.Get("json"))
+	// 输出：servername
+	fmt.Println(field.Tag.Get("xorm"))
+	// 输出：extends
+	fmt.Println(field.Interface())
 }
