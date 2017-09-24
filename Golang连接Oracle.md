@@ -1,9 +1,11 @@
-﻿# Golang连接Oracle
+﻿﻿# Golang连接Oracle
 
 标签（空格分隔）： 学习
 
 ---
-# windows
+
+在此输入正文
+
 ## 一、安装MinGW
  http://blog.csdn.net/mecho/article/details/24305369
  我的是64位的
@@ -125,7 +127,7 @@ func main() {
 
 # linux oci8
 
-## 1,下载linux版OCI
+1,下载linux版OCI
 http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html
 
 ![此处输入图片的描述][4]
@@ -135,6 +137,12 @@ http://www.oracle.com/technetwork/database/features/instant-client/index-097480.
   ![此处输入图片的描述][5]
 
 
+  [1]: http://note.youdao.com/yws/api/personal/file/83C4B66AE42744E5A7BDDC37D3AC054B?method=download&shareKey=13d92356f4a1796b00eaebe8c452da08
+  [2]: http://note.youdao.com/yws/api/personal/file/412FC0462F43424989D9C161D20B4710?method=download&shareKey=d562877e203eb4f95eedcfedbef7dbe1
+  [3]: http://note.youdao.com/yws/api/personal/file/E7B34677179846B19A324FB183DC491C?method=download&shareKey=412fb797b113f54eeb0f792a84aae0fb
+  [4]: http://note.youdao.com/yws/api/personal/file/8D00DB9458924BE8A502AEF83FF93F13?method=download&shareKey=7dd714a0bcd10a38f187d69e390c0615
+  [5]: http://note.youdao.com/yws/api/personal/file/68EBF5497B7749F7994016F1643B3EFB?method=download&shareKey=d4b490cdc15d6a55c0ca514f73383eb4
+  
 执行下面命令
 ```liunx
     ln /usr/lib/instantclient_12_2/libclntsh.so.12.1 /usr/lib/libclntsh.so
@@ -142,7 +150,7 @@ http://www.oracle.com/technetwork/database/features/instant-client/index-097480.
    ln /usr/lib/instantclient_12_2/libociei.so /usr/lib/libociei.so
   ln /usr/lib/instantclient_12_2/libnnz12.so /usr/lib/libnnz12.so
 ```
-## 安装pkg-config
+安装pkg-config
 在 /usr/lib/pkg-config 目录下创建文件 oci8.pc，内容如下：
 ```
 # Package Information for pkg-config
@@ -159,7 +167,7 @@ Libs: -L${libdir} -lclntsh
 Libs.private: 
 Cflags: -I${includedir}
 ```
-## 环境变量设置
+环境变量设置
 vim /etc/profile
 在最后加上
 ```
@@ -168,56 +176,9 @@ export LD_LIBRARY_PATH=$ORACLE_HOME
 export PKG_CONFIG_PATH=/usr/lib/pkg-config
 ```
 source /etc/profile
-## 执行驱动下载
+执行驱动下载
 ```go
 go get github.com/mattn/go-oci8
 ```
 
-# mac
-oci和oci sdk 下载地址：[下载地址mac][6] (下载instantclient-basic和instantclient-sdk) 
 
-
-## 1. 下载完成后解压
-![此处输入图片的描述][7]
-
-
-## 2. 文件-前往文件夹/usr/local 创建pkg-config文件夹
-
-![此处输入图片的描述][8]
-
-
-  [1]: http://note.youdao.com/yws/api/personal/file/83C4B66AE42744E5A7BDDC37D3AC054B?method=download&shareKey=13d92356f4a1796b00eaebe8c452da08
-  [2]: http://note.youdao.com/yws/api/personal/file/412FC0462F43424989D9C161D20B4710?method=download&shareKey=d562877e203eb4f95eedcfedbef7dbe1
-  [3]: http://note.youdao.com/yws/api/personal/file/E7B34677179846B19A324FB183DC491C?method=download&shareKey=412fb797b113f54eeb0f792a84aae0fb
-  [4]: http://note.youdao.com/yws/api/personal/file/8D00DB9458924BE8A502AEF83FF93F13?method=download&shareKey=7dd714a0bcd10a38f187d69e390c0615
-  [5]: http://note.youdao.com/yws/api/personal/file/68EBF5497B7749F7994016F1643B3EFB?method=download&shareKey=d4b490cdc15d6a55c0ca514f73383eb4
-  [6]: http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html
-  [7]: http://note.youdao.com/yws/api/personal/file/WEB9664719965dcd4fb22851ee2ef7448e2?method=download&shareKey=c6ac9b3142ff3de20bcfeea1f2db3ced
-  [8]: http://note.youdao.com/yws/api/personal/file/WEB49595739be70d7e83c813ca7a853dfa6?method=download&shareKey=fbd0d5cf93b340477c07785b27aecd96
-
-## 3. 文件夹下面创建oci8.pc文件
-```
-prefix=/Users/yhlyl/java/instantclient_12_1//你的路径
-libdir=${prefix}
-includedir=${prefix}/sdk/include/
- 
-Name: OCI
-Description: Oracle database engine
-Version: 12.1 //你的版本
-Libs: -L${libdir} -lclntsh
-Libs.private: 
-Cflags: -I${includedir}
-```
-## 4. 环境变量设置
-```
-vim .bash_profile
-
-export ORACLE_HOME=/Users/yhlyl/java/instantclient_12_1
-export LD_LIBRARY_PATH=$ORACLE_HOME
-export PKG_CONFIG_PATH=/usr/local/pkg-config
-
-source .bash_profile
-
-go get github.com/mattn/go-oci8
-```
-## 5. 完成
