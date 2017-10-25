@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+"fmt"
+)
 
 var c chan string
 
@@ -14,6 +16,7 @@ func Pinpang()  {
 }
 
 func main() {
+	defer 
 	c = make(chan string)
 	go Pinpang()
 
@@ -22,3 +25,5 @@ func main() {
 		fmt.Println(<-c)
 	}
 }
+
+

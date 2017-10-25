@@ -26,3 +26,12 @@ func swap1(x *int, y *int) {
 	*x = *y
 	*y = temp
 }
+
+//  函数执行时间
+func Trace(msg string) func() {
+	start := time.Now()
+	fmt.Printf("enter %s\n", msg)
+	return func() {
+		fmt.Printf("exit %s (%s)\n", msg, time.Since(start))
+	}
+}
