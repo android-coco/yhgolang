@@ -23,6 +23,11 @@ func Info(o interface{}) {
 		return
 	}
 	v := reflect.ValueOf(o) //打印出所包含的字段
+	var a []X
+	v1 := reflect.ValueOf(a)
+	t1 := reflect.Indirect(v1).Type()
+	fmt.Println(t1.Align())
+	return
 	z := v.Interface().([]X)
 	fmt.Println("Fields:", z, &z)
 
