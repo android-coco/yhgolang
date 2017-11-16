@@ -18,3 +18,10 @@ func main() {
 	//b := []Px{Px{"1","2017-10-31 12:01:00","2"},Px{"2","2017-10-31 13:01:00","3"}}
 }
 
+func MergeSort(value ...[]Px)  {
+	total := 0
+	for _, num := range value {
+		total += len(num)
+	}
+}
+
