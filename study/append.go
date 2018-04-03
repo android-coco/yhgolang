@@ -24,5 +24,5 @@ func main() {
 	//还有种特殊用法，将字符串当作[]byte类型作为第二个参数传入
 	//append函数返回值必须有变量接收，不然编译器会报错
 	bytes := append([]byte("hello"), " world"...)
-	fmt.Println(string(bytes))
+	fmt.Println(string(bytes)) //hello world
 }
