@@ -10,4 +10,5 @@ func Test() int {
 
 func init() {
 	fmt.Println("fadsfadsf")
+	fmt.Println("fdfsadfadsf")
 }
