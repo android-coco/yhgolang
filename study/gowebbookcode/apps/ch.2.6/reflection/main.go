@@ -20,7 +20,7 @@ func show_reflection() {
 	fmt.Println("type:", v.Type())
 	fmt.Println("kind is float64:", v.Kind() == reflect.Float64)
 	fmt.Println("value:", v.Float())
-	
+
 	p := reflect.ValueOf(&x)
 	newX := p.Elem()
 	newX.SetFloat(7.1)
@@ -30,4 +30,13 @@ func show_reflection() {
 func main() {
 	show_interface_none()
 	show_reflection()
+	var i int64 = 1
+	fmt.Println("Type:", reflect.TypeOf(i).Align())
+
+	var b = 7.8
+	A(reflect.ValueOf(b))
+}
+func A(a reflect.Value) {
+	y := a.Interface().(float64)
+	fmt.Println(y)
 }
