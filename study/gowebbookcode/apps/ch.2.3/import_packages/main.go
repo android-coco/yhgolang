@@ -9,12 +9,13 @@ package main
 
 import (
 	// `_` will only call init() inside the package only_call_init
-	_ "apps/ch.2.3/import_packages/only_call_init"
+	_ "awesomeProject/study/gowebbookcode/apps/ch.2.3/import_packages/only_call_init"
 	f "fmt"         // import the package as `f`
 	. "math"        // makes the public methods and constants global
-	"mymath"        // custom package located at $GOPATH/src/
+	"awesomeProject/study/gowebbookcode/mymath"      // custom package located at $GOPATH/src/
 	"os"            // normal import of a standard package
 	"text/template" // the package takes the name of last folder path, `template`
+
 )
 
 func main() {

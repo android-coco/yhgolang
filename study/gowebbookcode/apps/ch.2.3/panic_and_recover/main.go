@@ -9,7 +9,7 @@ import (
 
 var user = os.Getenv("USER")
 
-func check_user() {
+func checkUser() {
 	if user == "" {
 		panic("no value for $USER")
 	}
@@ -26,6 +26,6 @@ func throwsPanic(f func()) (b bool) {
 	return
 }
 func main(){
-	didPanic := throwsPanic(check_user)
+	didPanic := throwsPanic(checkUser)
 	fmt.Println("didPanic =", didPanic)
 }

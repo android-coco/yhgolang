@@ -6,7 +6,7 @@ package main
 
 import (
 	"fmt"
-	"mymath"
+	"awesomeProject/study/gowebbookcode/mymath"
 )
 
 func main() {
