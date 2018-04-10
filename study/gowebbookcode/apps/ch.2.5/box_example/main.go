@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 const (
-	WHITE = iota
+	WHITE  = iota
 	BLACK
 	BLUE
 	RED
@@ -40,7 +40,7 @@ func (bl BoxList) BiggestsColor() Color {
 }
 
 func (bl BoxList) PaintItBlack() {
-	for i, _ := range bl {
+	for i := range bl {
 		bl[i].SetColor(BLACK)
 	}
 }
