@@ -32,7 +32,7 @@ func main() {
         case Person:
             fmt.Printf("list[%d] is a Person and its value is %s\n", index, value)
         default:
-            fmt.Println("list[%d] is of a different type", index)
+            fmt.Printf("list[%d] is of a different type", index)
         }
     }
 }

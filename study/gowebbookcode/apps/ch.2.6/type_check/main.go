@@ -31,7 +31,7 @@ func main() {
         } else if value, ok := element.(Person); ok {
             fmt.Printf("list[%d] is a Person and its value is %s\n", index, value)
         } else {
-            fmt.Println("list[%d] is of a different type", index)
+            fmt.Printf("list[%d] is of a different type", index)
         }
     }
 }
