@@ -86,6 +86,23 @@ func main() {
 	copy(numbers7, numbers6)
 	printSlice(numbers7)
 
+
+	fmt.Printf("=====XXXX=========\n")
+	s := []int{2, 3, 5, 7, 11, 13}
+	printSlice(s)//6 6
+
+	// Slice the slice to give it zero length.
+	s = s[1:4]//0 6
+	printSlice(s)
+
+	// Extend its length.
+	s = s[:5] //4 6
+	printSlice(s)
+
+	// Drop its first two values.
+	s = s[3:]//2 4
+	printSlice(s)
+
 }
 
 //切片是可索引的，并且可以由 len() 方法获取长度。
