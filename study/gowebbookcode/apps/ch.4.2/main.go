@@ -5,14 +5,14 @@
 package main
 
 import (
-	"awesomeProject/studygo/gowebbookcode/apps/ch.4.2/validator"
 	"html/template"
 	"log"
 	"net/http"
+	"awesomeProject/study/gowebbookcode/apps/ch.4.2/validator"
 )
 
 const (
-	PORT     = "9090"
+	PORT     = "10000"
 	HOST_URL = "http://localhost:" + PORT
 )
 
@@ -40,7 +40,7 @@ func checkProfile(w http.ResponseWriter, r *http.Request) {
 // This function is called before main()
 func init() {
 	// Note: we can reference the loaded templates by their defined name inside the template files.
-	t = template.Must(template.ParseFiles("profile.gtpl", "submission.gtpl"))
+	t = template.Must(template.ParseFiles("C:/workHome/gowork/src/awesomeProject/study/gowebbookcode/apps/ch.4.2/profile.gtpl", "C:/workHome/gowork/src/awesomeProject/study/gowebbookcode/apps/ch.4.2/submission.gtpl"))
 
 	list := make([][2]string, 2)
 	list[0] = [2]string{HOST_URL + "/checkprofile", "No data"}

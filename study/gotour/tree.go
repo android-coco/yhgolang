@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+
+
 // Walk 步进 tree t 将所有的值从 tree 发送到 channel ch。
 func Walk(t *tree.Tree, ch chan int) {
 	if t == nil {
