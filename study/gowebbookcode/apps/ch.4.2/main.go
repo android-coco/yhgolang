@@ -13,7 +13,7 @@ import (
 
 const (
 	PORT     = "10000"
-	HOST_URL = "http://localhost:" + PORT
+	HOSTURL = "http://localhost:" + PORT
 )
 
 var t *template.Template
@@ -26,7 +26,7 @@ type Links struct {
 var links Links
 
 func index(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, HOST_URL+"/profile", http.StatusTemporaryRedirect)
+	http.Redirect(w, r, HOSTURL+"/profile", http.StatusTemporaryRedirect)
 }
 func profileHandler(w http.ResponseWriter, r *http.Request) {
 	t.ExecuteTemplate(w, "profile", links)
@@ -43,8 +43,8 @@ func init() {
 	t = template.Must(template.ParseFiles("C:/workHome/gowork/src/awesomeProject/study/gowebbookcode/apps/ch.4.2/profile.gtpl", "C:/workHome/gowork/src/awesomeProject/study/gowebbookcode/apps/ch.4.2/submission.gtpl"))
 
 	list := make([][2]string, 2)
-	list[0] = [2]string{HOST_URL + "/checkprofile", "No data"}
-	list[1] = [2]string{HOST_URL + "/checkprofile?age=1&gender=guy&shirtsize=big", "Invalid options"}
+	list[0] = [2]string{HOSTURL + "/checkprofile", "No data"}
+	list[1] = [2]string{HOSTURL + "/checkprofile?age=1&gender=guy&shirtsize=big", "Invalid options"}
 	links = Links{list}
 }
 func main() {
