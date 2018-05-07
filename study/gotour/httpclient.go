@@ -2,9 +2,8 @@ package main
 
 import (
 	"net/http"
-	"os"
 	"io"
-	"fmt"
+	"os"
 )
 
 func main() {
@@ -23,7 +22,7 @@ func main() {
 	_, err = io.Copy(stdout, response.Body)
 
 	//返回的状态码
-	status := response.StatusCode
+	//status := response.StatusCode
 
-	fmt.Println(status)
+	//fmt.Println(response.Body)
 }
