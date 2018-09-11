@@ -163,19 +163,19 @@ func set_default_values() {
 }
 func show_arrays() {
 	fmt.Println("show_arrays()")
-	var arr [10]int // an array of type int
-	arr[0] = 42     // array is 0-based
+	var arr [10]int // an arrays of type int
+	arr[0] = 42     // arrays is 0-based
 	arr[1] = 13     // assign value to element
 
-	a := [3]int{1, 2, 3} // define a int array with 3 elements
+	a := [3]int{1, 2, 3} // define a int arrays with 3 elements
 
 	b := [10]int{1, 2, 3}
-	// define a int array with 10 elements,
+	// define a int arrays with 10 elements,
 	// and first three are assigned, rest of them use default value 0.
 
 	c := [...]int{4, 5, 6} // use `…` replace with number of length, Go will calculate it for you.
 
-	// define a two-dimensional array with 2 elements, and each element has 4 elements.
+	// define a two-dimensional arrays with 2 elements, and each element has 4 elements.
 	doubleArray := [2][4]int{[4]int{1, 2, 3, 4}, [4]int{5, 6, 7, 8}}
 
 	// You can write about declaration in a shorter way.
@@ -184,14 +184,14 @@ func show_arrays() {
 	fmt.Println("arr =", arr)
 	fmt.Printf("The first element is %d\n", arr[0]) // get element value, it returns 42
 	fmt.Printf("The last element is %d\n", arr[9])
-	//it returns default value of 10th element in this array, which is 0 in this case.
+	//it returns default value of 10th element in this arrays, which is 0 in this case.
 
-	fmt.Println("array a =", a)
-	fmt.Println("array b =", b)
-	fmt.Println("array c =", c)
+	fmt.Println("arrays a =", a)
+	fmt.Println("arrays b =", b)
+	fmt.Println("arrays c =", c)
 
-	fmt.Println("array doubleArray =", doubleArray)
-	fmt.Println("array easyArray =", easyArray)
+	fmt.Println("arrays doubleArray =", doubleArray)
+	fmt.Println("arrays easyArray =", easyArray)
 }
 func show_slices() {
 	fmt.Println("show_slices()")
@@ -201,23 +201,23 @@ func show_slices() {
 	// define two slices with type []byte
 	var a, b []byte
 
-	// a points to elements from 3rd to 5th in array ar.
+	// a points to elements from 3rd to 5th in arrays ar.
 	a = ar[2:5]
 	// now a has elements ar[2]、ar[3] and ar[4]
 
-	// b is another slice of array ar
+	// b is another slice of arrays ar
 	b = ar[3:5]
 	// now b has elements ar[3] and ar[4]
 
-	// define an array
+	// define an arrays
 	var array = [10]byte{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'}
 	// define two slices
 	var aSlice, bSlice []byte
 
 	// some convenient operations
-	aSlice = array[:3] // equals to aSlice = array[0:3] aSlice has elements a,b,c
-	aSlice = array[5:] // equals to aSlice = array[5:10] aSlice has elements f,g,h,i,j
-	aSlice = array[:]  // equals to aSlice = array[0:10] aSlice has all elements
+	aSlice = array[:3] // equals to aSlice = arrays[0:3] aSlice has elements a,b,c
+	aSlice = array[5:] // equals to aSlice = arrays[5:10] aSlice has elements f,g,h,i,j
+	aSlice = array[:]  // equals to aSlice = arrays[0:10] aSlice has all elements
 
 	// slice from slice
 	aSlice = array[3:7]  // aSlice has elements d,e,f,g，len=4，cap=7
@@ -229,7 +229,7 @@ func show_slices() {
 	fmt.Println("slice ar =", ar)
 	fmt.Println("slice a =", a)
 	fmt.Println("slice b =", b)
-	fmt.Println("array =", array)
+	fmt.Println("arrays =", array)
 	fmt.Println("slice aSlice =", aSlice)
 	fmt.Println("slice bSlice =", bSlice)
 	fmt.Println("len(bSlice) =", len(bSlice))

@@ -8,8 +8,8 @@ import (
 	"awesomeProject/mkw/functional/fib"
 )
 
-type intGen func() int
 
+type intGen func() int
 func (g intGen) Read(p []byte) (n int, err error) {
 	next := g()
 	if next > 10000 {

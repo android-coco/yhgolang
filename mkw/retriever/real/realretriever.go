@@ -1,4 +1,4 @@
-package myreal
+package real
 
 import (
 	"time"
@@ -10,6 +10,7 @@ type Retriever struct {
 	UserAgent string
 	TimOut time.Duration
 }
+
 
 func (r *Retriever) Get(url string) string {
 	resp,err := http.Get(url)

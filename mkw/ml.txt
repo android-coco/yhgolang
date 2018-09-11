@@ -1,0 +1,17 @@
+1,godoc -http :6060（查看文档）
+2,go doc xxx（生成文档）
+3,go doc（生成文档）
+
+//----测试相关----
+//go test -bench .
+//性能查看
+// go test -bench . -cpuprofile cpu.out
+//go tool pprof cpu.out
+//web
+
+//代码覆盖率
+//go test -coverprofile=c.out
+//go tool cover -html c.out
+
+
+go run -race
