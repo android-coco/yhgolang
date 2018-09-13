@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 func doWorke(id int, w worker) {
@@ -62,4 +63,8 @@ func chanDemo() {
 }
 func main() {
 	chanDemo()
+	fmt.Println(time.AfterFunc(time.Second, func() {
+		fmt.Println("1111")
+	}))
+	time.Sleep(time.Second * 2)
 }
