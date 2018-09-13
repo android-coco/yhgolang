@@ -1,14 +1,14 @@
 package main
 
 import (
-	"testing"
-	"net/http"
-	"net/http/httptest"
-	"io/ioutil"
-	"strings"
-	"os"
 	"errors"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"strings"
+	"testing"
 )
 
 type testingUserError string
@@ -63,6 +63,7 @@ var tests = []struct {
 	{errUnknown, 500, "Internal Server Error"},
 	{noError, 200, "no error"},
 }
+
 //通过使用假的Request/Response测试
 func TestErrwrapper(t *testing.T) {
 

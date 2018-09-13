@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"runtime"
+	"time"
 )
+
 // 协程
 //轻量级 "线程"
 //非抢占式多任务处理，由协程主动交出控制权
@@ -20,7 +21,7 @@ func tryGoroutine2() {
 	for i := 0; i < 10; i++ {
 		go func(i int) { // race condition !
 			for {
-				a[i] ++
+				a[i]++
 				//如果不让出给别人运行就死循环
 				runtime.Gosched()
 			}
