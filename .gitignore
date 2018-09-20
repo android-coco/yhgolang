@@ -38,3 +38,6 @@ static/.babelrc
 static/config
 static/config/*
 static/src
+bin/
+fib1.txt
+data/
