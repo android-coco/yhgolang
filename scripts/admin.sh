@@ -2,10 +2,11 @@
 
 #shell脚本执行目录
 exe_path="$( cd "$( dirname "$0"  )" && pwd  )"
+echo ${exe_path}
 SERVER_HOME=${exe_path}/../
 SERVER_BIN=${SERVER_HOME}/bin/
 SERVER_PID=${SERVER_HOME}/data/go.pid
-EXE_NAME=go_build_main_go
+EXE_NAME=xx
 
 start()
 {
