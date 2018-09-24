@@ -26,7 +26,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("method:", r.Method)
 	r.ParseForm()
 	if r.Method == "GET" {
-		t, err := template.ParseFiles("C:/workHome/gowork/src/awesomeProject/study/gotour/login.html")
+		t, err := template.ParseFiles("C:/workHome/gowork/src/yhgolang/study/gotour/login.html")
 		if err != nil{
 			fmt.Println(err)
 			return

@@ -1,10 +1,10 @@
 package core
 
 import (
-	"time"
-	"strconv"
 	"bytes"
 	"crypto/sha256"
+	"strconv"
+	"time"
 )
 
 //Block keeps block headers

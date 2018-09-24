@@ -1,9 +1,9 @@
 package main
 
 import (
-	"awesomeProject/org.yh/util" //引用自己的包
 	"fmt"
 	"os"
+	"yhgolang/org.yh/util" //引用自己的包
 )
 
 type NokiaPhone struct {

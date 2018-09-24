@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"awesomeProject/mkw/retriever/mock"
-	"awesomeProject/mkw/retriever/real"
+	"yhgolang/mkw/retriever/mock"
+	"yhgolang/mkw/retriever/real"
 	"time"
 )
 

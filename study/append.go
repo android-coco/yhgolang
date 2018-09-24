@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "awesomeProject/org.yh/util"
+	_ "yhgolang/org.yh/util"
 	"fmt"
 )
 

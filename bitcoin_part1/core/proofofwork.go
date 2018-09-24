@@ -1,12 +1,13 @@
 package core
 
 import (
+	"bytes"
+	"crypto/sha256"
+	"fmt"
 	"math"
 	"math/big"
-	"bytes"
-	"fmt"
-	"crypto/sha256"
 )
+
 
 var (
 	maxNonce = math.MaxInt64

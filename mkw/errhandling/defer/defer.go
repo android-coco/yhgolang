@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"bufio"
-	"awesomeProject/mkw/functional/fib"
+	"yhgolang/mkw/functional/fib"
 )
 
 func tryDefer() {

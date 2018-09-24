@@ -68,7 +68,7 @@ func main() {
       --bin
       --pkg
       --src
-            --awesomeProject
+            --yhgolang
                --org.yh
                  --uitl
                      importDemo.go 
@@ -79,7 +79,7 @@ append.go
 package main
 
 import (
-    _ "awesomeProject/org.yh/util"
+    _ "yhgolang/org.yh/util"
     "fmt"
 )
 
