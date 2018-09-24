@@ -1,7 +1,7 @@
 package main
 
 import (
-	"awesomeProject/mkw/queue"
+	"yhgolang/mkw/queue"
 	"fmt"
 )
 

@@ -49,7 +49,7 @@ func main() {
 		convertToBin(0),
 	)
 
-	printFile("/Users/yhlyl/work/gowork/src/awesomeProject/mkw/abc.txt")
+	printFile("/Users/yhlyl/work/gowork/src/yhgolang/mkw/abc.txt")
 
 	s :=`fadsfadsf adfadsfasdf fsadfasdf
 	fsdafasdf

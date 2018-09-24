@@ -23,7 +23,7 @@ func grade(score int) string {
 }
 
 func main() {
-	const filename = "/Users/yhlyl/work/gowork/src/awesomeProject/mkw/abc.txt"
+	const filename = "/Users/yhlyl/work/gowork/src/yhgolang/mkw/abc.txt"
 	contents, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println(err)

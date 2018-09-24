@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 	"bufio"
-	"awesomeProject/mkw/functional/fib"
+	"yhgolang/mkw/functional/fib"
 )
 
 

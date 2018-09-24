@@ -8,7 +8,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
-	"awesomeProject/study/gowebbookcode/apps/ch.4.2/validator"
+	"yhgolang/study/gowebbookcode/apps/ch.4.2/validator"
 )
 
 const (
@@ -40,7 +40,7 @@ func checkProfile(w http.ResponseWriter, r *http.Request) {
 // This function is called before main()
 func init() {
 	// Note: we can reference the loaded templates by their defined name inside the template files.
-	t = template.Must(template.ParseFiles("C:/workHome/gowork/src/awesomeProject/study/gowebbookcode/apps/ch.4.2/profile.gtpl", "C:/workHome/gowork/src/awesomeProject/study/gowebbookcode/apps/ch.4.2/submission.gtpl"))
+	t = template.Must(template.ParseFiles("C:/workHome/gowork/src/yhgolang/study/gowebbookcode/apps/ch.4.2/profile.gtpl", "C:/workHome/gowork/src/yhgolang/study/gowebbookcode/apps/ch.4.2/submission.gtpl"))
 
 	list := make([][2]string, 2)
 	list[0] = [2]string{HOSTURL + "/checkprofile", "No data"}

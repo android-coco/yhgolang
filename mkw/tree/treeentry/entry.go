@@ -1,7 +1,7 @@
 package main
 
 import (
-	"awesomeProject/mkw/tree"
+	"yhgolang/mkw/tree"
 	"fmt"
 )
 
