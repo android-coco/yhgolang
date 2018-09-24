@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	bc := core.NewBlockchain() //初始化区块链,创建第一个区块（创世纪区块）
+	bc := core.NewBlockChain() //初始化区块链,创建第一个区块（创世纪区块）
 
 	bc.AddBlock("Send 1 BTC to Ivan")      //加入一个区块,发送一个比特币给伊文
 	bc.AddBlock("Send 2 more BTC to Ivan") //加入一个区块,发送一个比特币给伊文
