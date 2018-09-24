@@ -33,8 +33,8 @@ func euler() {
 	c := 3 + 4i
 	fmt.Println(cmplx.Abs(c))
 
-	fmt.Println(cmplx.Pow(math.E, 1i*math.Pi) + 1)
 	fmt.Printf("%3f\n", cmplx.Exp(1i*math.Pi)+1)
+	fmt.Println(cmplx.Pow(math.E, 1i*math.Pi) + 1)
 }
 
 func triangle() {

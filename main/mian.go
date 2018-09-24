@@ -3,6 +3,7 @@ package main
 import (
 	"awesomeProject/org.yh/util" //引用自己的包
 	"fmt"
+	"os"
 )
 
 type NokiaPhone struct {
@@ -15,6 +16,8 @@ type I_Phone interface {
 	call()
 	sms()
 }
+
+
 
 func (iphone Iphone) call() {
 	fmt.Println("my is Iphone call")
@@ -33,6 +36,7 @@ func (iphone Iphone) sms() {
 }
 
 func main() {
+	fmt.Printf("pid= %#v\n",os.Getpid())
 	var iphone I_Phone
 	iphone = new(NokiaPhone)
 	iphone.call()
