@@ -6,7 +6,7 @@ import (
 )
 
 type Loss struct {
-	Storeid  int64
+	StoreID  int64
 	Dateline string
 	Type     int64
 }
