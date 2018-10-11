@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"net/http/httputil"
 	"time"
@@ -95,10 +97,10 @@ type Node struct {
 }
 
 type Location struct {
-	Name    string `json:"name"`
-	Country string `json:"country"`
-	Lat     float64  `json:"latitude"`
-	Lon     float64  `json:"longitude"`
+	Name    string  `json:"name"`
+	Country string  `json:"country"`
+	Lat     float64 `json:"latitude"`
+	Lon     float64 `json:"longitude"`
 }
 
 type Branding struct {
@@ -112,15 +114,16 @@ func main() {
 	//fmt.Println(f)
 	//fmt.Println(strings.NewReader("123").Len())
 	//fmt.Println(strings.NewReader("123").Size())
-	a := &A{}
-	json.Unmarshal([]byte(json1), a)
+	a := &Branding{}
+	unmarshal := json.Unmarshal([]byte(json1), a)
+	fmt.Println(unmarshal)
 	//for _, node := range a.Nodes {
 	//	if node.NodeType == "full" {
 	//		fmt.Println(node.Location.Country)
 	//		break
 	//	}
 	//}
-	fmt.Println(a.Org.Branding)
+	//fmt.Println(a.Org.Branding)
 	//layout := "2006-01-02 15:04:05"
 
 	// just one second
@@ -128,6 +131,20 @@ func main() {
 	//t2, _ := time.Parse(layout, "00:00:00")
 	//fmt.Println(timeSub(t1, t2))
 	//fmt.Println(time.Now().Hour())
+	Post("")
+}
+type eosParkReq struct {
+	Id            string `json:"id"`
+	Json  bool `json:"json"`
+}
+func Post(url string) {
+	eosReq := eosParkReq{
+		Id:"cce517a177944c32721a6effcbbd262a5aa9607a89e2d7e268cfc3f3165b90be",
+		Json:true,
+	}
+	body, err := SendRequest("Post", eosReq, "https://mainnet-history.meet.one/v1/history/get_transaction")
+
+	fmt.Println(string(body),err)
 }
 func Get(url string) string {
 	resp, err := http.Get(url)
@@ -180,4 +197,42 @@ func timeSubDays(t1, t2 time.Time) int {
 			return int(hours/24) + 1
 		}
 	}
+}
+var EOSClient = &http.Client{
+}
+func SendRequest(method string, t_req interface{}, req_url string) (body []byte, err error) {
+
+	//通常是采用strings.NewReader函数，将一个string类型转化为io.Reader类型，或者bytes.NewBuffer函数，将[]byte类型转化为io.Reader类型。
+
+	req_buf, _ := json.Marshal(t_req)
+	req_byte := bytes.NewBuffer(req_buf)
+
+	req, err := http.NewRequest("GET", "http://baidu.com", nil)
+	if t_req == nil {
+		req, err = http.NewRequest(method, req_url, nil)
+	} else {
+		req, err = http.NewRequest(method, req_url, req_byte)
+	}
+	if err != nil {
+		//Logger.Error("SendRequest  failed.  req_buf:", string(req_buf), "req_url:", req_url, " err:", err)
+		return nil, err
+	}
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+	resp, err := EOSClient.Do(req)
+	if err != nil && resp == nil {
+		//Logger.Error("SendRequest  failed.  req_buf:", string(req_buf), " req_url:", req_url, " err:", err)
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	body, err = ioutil.ReadAll(resp.Body)
+	if err != nil {
+		//Logger.Error("SendRequest  failed.  req_buf:", string(req_buf), "req_url:", req_url, " err:", err)
+		return nil, err
+	}
+
+	//Logger.Info(" SendRequest response:", string(body))
+
+	return body, nil
 }

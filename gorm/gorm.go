@@ -1,13 +1,14 @@
 package main
 
 import (
-	"yhgolang/gorm/db"
 	"fmt"
 	"github.com/BlockABC/eospark_backend/model"
 	"encoding/json"
 	"net/http"
 	"io/ioutil"
 	"github.com/jinzhu/gorm"
+
+	"yhgolang/gorm/db"
 )
 
 type Loss struct {
