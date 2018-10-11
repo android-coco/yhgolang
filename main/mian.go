@@ -6,6 +6,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 
 	"yhgolang/org.yh/util" //引用自己的包
 )
@@ -129,4 +130,38 @@ func main() {
 	for _, person := range persons {
 		fmt.Println(person.Name, ":", person.Age)
 	}
+	fmt.Println(1547 % 120)
+	fmt.Println((1547 - 107) / 120)
+
+	size := 1547
+	step := size / 10
+	tempSize := size - step*10
+	var temp []int
+	for i := tempSize; i < size; i += step {
+		temp = append(temp, i)
+	}
+	if len(temp) > 0 {
+		temp[len(temp)-1] = 888
+	}
+	fmt.Println(len(temp), temp)
+	for i := 0; i < 100000; i++ {
+		fmt.Println(strings.Contains(strings.ToUpper("Eosx"), strings.ToUpper("eos")))
+	}
+	v := strings.Split("eosbetdice11:8871964,", ",")
+	fmt.Println(len(v[0]))
+
+	WhiteList := "eosbetdice11:887196"
+	var isTotals = true
+	var total int64
+	if strings.Contains(WhiteList,":"){
+		split := strings.Split(WhiteList, ":")
+		if len(split) >= 2{
+			if split[0] == "eosbetdice11" {
+				x ,_:= strconv.Atoi(split[1])
+				total = int64(x)
+				isTotals = false
+			}
+		}
+	}
+	fmt.Println(total,isTotals,time.Now())
 }
