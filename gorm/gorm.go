@@ -1,8 +1,9 @@
 package main
 
 import (
-	"yhgolang/gorm/db"
 	"fmt"
+
+	"yhgolang/gorm/db"
 )
 
 type Loss struct {
@@ -12,7 +13,7 @@ type Loss struct {
 }
 
 func (*Loss) TableName() string {
-	 return "loss"
+	return "loss"
 }
 
 func main() {
@@ -22,5 +23,5 @@ func main() {
 	if err := db.First(&loss).Error; err != nil {
 		panic(err)
 	}
-	fmt.Printf("%#v\n",loss)
+	fmt.Printf("%#v\n", loss)
 }
