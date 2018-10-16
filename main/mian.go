@@ -1,8 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -55,6 +57,7 @@ func (p Persons) Less(i, j int) bool {
 
 // 交换数据
 func (p Persons) Swap(i, j int) { p[i], p[j] = p[j], p[i] }
+const emailReg  = `^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$`
 
 func main() {
 	fmt.Printf("pid= %#v\n", os.Getpid())
@@ -164,4 +167,18 @@ func main() {
 		}
 	}
 	fmt.Println(total,isTotals,time.Now())
+	now := time.Now()
+	next := now.Add(time.Hour * 10)
+	fmt.Println("xxxxx:" ,next)
+	next = time.Date(next.Year(), next.Month(), next.Day(), next.Hour(), 0, 0, 0, next.Location())
+	end  := time.Date(next.Year(), next.Month(), next.Day(), 23, 59, 59, 0, next.Location())
+
+	fmt.Println(next.Format("2006-01-02 15:04:05"),end.Format("2006-01-02 15:04:05"))
+	jsonstr := `{"status":"executed","cpu_usage_us":2841,"net_usage_words":19,"trx":{"id":"685550f6d82f30265087df37eebb2ed92fcee3276b6fd6895f2296d5a6303858","signatures":["SIG_K1_K6yQ7sRh5hvDU9LjfKfPQv572Eb9tcWNmSvC7ezfosMf8uf7i7LhyaijLwdLWkHoKR6w9ZsFiuTEc2E3jiGwGMBn9XtDin"],"compression":"none","packed_context_free_data":"","context_free_data":[],"packed_trx":"2d3dc45bc1e603dab9a3000000000100a6823403ea3055000000572d3ccdcd01a09865f94e93876600000000a8ed32323aa09865f94e938766401dce8db90931556e0000000000000004454f5300000000196d61743a3333313939393a313a6a676e6a676e6a676e31323300","transaction":{"expiration":"2018-10-15T07:09:33","ref_block_num":59073,"ref_block_prefix":2746866179,"max_net_usage_words":0,"max_cpu_usage_ms":0,"delay_sec":0,"context_free_actions":[],"actions":[{"account":"eosio.token","name":"transfer","authorization":[{"actor":"gu3tanrtgqge","permission":"active"}],"data":{"from":"gu3tanrtgqge","to":"eosknightsio","quantity":"0.0110 EOS","memo":"mat:331999:1:jgnjgnjgn123"},"hex_data":"a09865f94e938766401dce8db90931556e0000000000000004454f5300000000196d61743a3333313939393a313a6a676e6a676e6a676e313233"}],"transaction_extensions":[]}}}`
+	fmt.Println(json.Unmarshal([]byte(jsonstr),&Person{}))
+
+	matched, _ := regexp.MatchString(emailReg, "1111")
+	fmt.Println(matched)
 }
+
+
