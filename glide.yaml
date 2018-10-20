@@ -1,0 +1,40 @@
+package: yhgolang
+import:
+- package: apps/ch.4.4/nonce
+- package: apps/ch.4.4/validator
+- package: fit
+- package: github.com/BlockABC/eospark_backend
+  subpackages:
+  - model
+- package: github.com/Go-SQL-Driver/MySQL
+  version: ^1.4.0
+- package: github.com/astaxie/beedb
+- package: github.com/astaxie/beego
+  version: ^1.10.1
+- package: github.com/astaxie/goredis
+- package: github.com/denisenkom/go-mssqldb
+- package: github.com/go-sql-driver/mysql
+  version: ^1.4.0
+- package: github.com/go-xorm/core
+  version: ^0.6.0
+- package: github.com/go-xorm/xorm
+  version: ^0.7.0
+- package: github.com/gpmgo/gopm
+  version: ^0.7.2
+  subpackages:
+  - modules/log
+- package: github.com/jinzhu/gorm
+  version: ^1.9.1
+  subpackages:
+  - dialects/mysql
+- package: github.com/lib/pq
+  version: ^1.0.0
+- package: github.com/lunny/godbc
+- package: github.com/mattn/go-oci8
+- package: github.com/mattn/go-sqlite3
+  version: ^1.9.0
+- package: golang.org/x/tour/pic
+- package: golang.org/x/tour/tree
+- package: labix.org/v2/mgo
+  subpackages:
+  - bson
