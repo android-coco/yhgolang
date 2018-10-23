@@ -16,7 +16,7 @@ func main() {
 
 	request.Header.Add("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1")
 
-	clinet := http.Client{
+	client := http.Client{
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
 			fmt.Println("Redirect:",req)
 			return nil
@@ -24,7 +24,7 @@ func main() {
 	}
 
 	//resp, err := http.DefaultClient.Do(request)
-	resp, err := clinet.Do(request)
+	resp, err := client.Do(request)
 
 	//resp, err := http.Get(url)
 	if err != nil {
