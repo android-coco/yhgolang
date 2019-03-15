@@ -1,8 +1,9 @@
 package main
 
 import (
-	_ "yhgolang/org.yh/util"
 	"fmt"
+
+	_ "yhgolang/org.yh/util"
 )
 
 func main() {
