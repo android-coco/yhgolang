@@ -11,9 +11,9 @@ import (
 func main() {
 	host := "smtp.exmail.qq.com"
 	port := 465
-	email := "info@blockabc.com"
-	password := "block888ABC"
-	toEmail := "yhlovelyl@vip.qq.com"
+	email := "发送邮箱"
+	password := "密码"
+	toEmail := "接收邮箱"
 
 	header := make(map[string]string)
 	header["From"] = "Dockboard " + "<" + email + ">"
