@@ -1,12 +1,12 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/BlockABC/eospark_backend/model"
-	"encoding/json"
-	"net/http"
-	"io/ioutil"
 	"github.com/jinzhu/gorm"
+	"io/ioutil"
+	"net/http"
 
 	"yhgolang/gorm/db"
 )
@@ -50,7 +50,7 @@ func GetRankAndCountry() {
 			return
 		}
 	}
-	UpdateCountry(db,bpInfo)
+	UpdateCountry(db, bpInfo)
 }
 
 func UpdateCountry(db *gorm.DB, bpInfo []model.BpInfo) {
