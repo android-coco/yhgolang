@@ -65,7 +65,7 @@ const (
 func main() {
 	var b 文本
 	b = "中文类型名"
-	std.Println(math.MaxInt8)
+	std.Println(math.MaxUint8)
 	std.Println(b)
 
 	var a float32 = 100.1
