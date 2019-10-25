@@ -8,7 +8,7 @@ import (
 	"github.com/micro/go-micro/broker"
 	"github.com/micro/go-micro/config/cmd"
 	// To enable rabbitmq plugin uncomment
-	_ "github.com/micro/go-plugins/broker/rabbitmq"
+	_ "yhgolang/go-micro/broker/rabbitmq"
 )
 
 var (
@@ -16,6 +16,7 @@ var (
 )
 
 func pub() {
+
 	tick := time.NewTicker(time.Second)
 	i := 0
 	for _ = range tick.C {
@@ -35,6 +36,8 @@ func pub() {
 }
 
 func main() {
+
+
 	cmd.Init()
 
 	if err := broker.Init(); err != nil {

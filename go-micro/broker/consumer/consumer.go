@@ -7,7 +7,7 @@ import (
 	"github.com/micro/go-micro/broker"
 	"github.com/micro/go-micro/config/cmd"
 	// To enable rabbitmq plugin uncomment
-	//_ "github.com/micro/go-plugins/broker/rabbitmq"
+	_ "yhgolang/go-micro/broker/rabbitmq"
 )
 
 var (
@@ -37,7 +37,7 @@ func sub() {
 }
 
 func main() {
-	cmd.Init()
+	_ = cmd.Init()
 
 	if err := broker.Init(); err != nil {
 		log.Fatalf("Broker Init error: %v", err)

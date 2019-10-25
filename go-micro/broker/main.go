@@ -7,6 +7,7 @@ import (
 
 	"github.com/micro/go-micro/broker"
 	"github.com/micro/go-micro/config/cmd"
+	_ "yhgolang/go-micro/broker/rabbitmq"
 )
 
 var (
@@ -42,6 +43,7 @@ func sub() {
 	}
 }
 
+
 func main() {
 	cmd.Init()
 
@@ -52,8 +54,9 @@ func main() {
 		log.Fatalf("Broker Connect error: %v", err)
 	}
 
+
 	go pub()
 	go sub()
 
-	<-time.After(time.Second * 10)
+	<-time.After(time.Minute * 10)
 }
