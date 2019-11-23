@@ -1,0 +1,2 @@
+{"level":"warn","ts":"2019-11-23T11:45:46.161+0800","caller":"log/main.go:11","msg":"11{1 15 0 2 <nil>}"}
+{"level":"warn","ts":"2019-11-23T11:47:10.170+0800","caller":"log/main.go:12","msg":"11{1 15 0 2 <nil>}"}
