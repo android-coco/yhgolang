@@ -9,13 +9,14 @@ func Publish(exchange, routingKey string, msg []byte) bool {
 	}
 
 	if nil == channel.Publish(
-		exchange,
-		routingKey,
+		exchange, // exchange
+		routingKey,// routing key
 		false, // 如果没有对应的queue, 就会丢弃这条消息
 		false, //
 		amqp.Publishing{
-			ContentType: "text/plain",
-			Body:        msg}) {
+			DeliveryMode: amqp.Persistent, // 消息持久化，虽然消息设置持久化了，但是并不能保证一定会
+			ContentType:  "text/plain",
+			Body:         msg}) {
 		return true
 	}
 	return false
