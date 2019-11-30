@@ -10,6 +10,8 @@ require (
 	github.com/lestrrat-go/file-rotatelogs v2.2.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.0 // indirect
 	github.com/micro/go-micro v1.13.2
+	github.com/pkg/errors v0.8.1
+	github.com/robfig/cron/v3 v3.0.0
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271
 	go.uber.org/zap v1.13.0
 	google.golang.org/appengine v1.6.5 // indirect
