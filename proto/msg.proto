@@ -1,0 +1,14 @@
+syntax = "proto3";
+package proto;
+
+message Product
+{
+    string name = 1; // 商品名
+    // 定义一个k/v类型，key是string类型，value也是string类型
+    map<string, Result> attrs = 2; // 商品属性，键值对
+}
+
+message Result {
+    string url = 1;
+    string title = 2;
+}
