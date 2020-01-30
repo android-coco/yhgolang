@@ -1,17 +1,17 @@
 package internal
 
 import (
-	"server/model"
-	"server/protocol"
-	"server/algorithm"
-	"time"
-	"github.com/dolotech/leaf/room"
 	"github.com/golang/glog"
+	"time"
+	"yhgolang/dzpk/github.com/dolotech/leaf/room"
+	"yhgolang/dzpk/server/algorithm"
+	"yhgolang/dzpk/server/model"
+	"yhgolang/dzpk/server/protocol"
 )
 
 const (
-	RUNNING  uint8= 1
-	GAMEOVER uint8= 0
+	RUNNING  uint8 = 1
+	GAMEOVER uint8 = 0
 )
 
 type Room struct {
@@ -206,7 +206,7 @@ func (r *Room) Len() uint8 {
 	var num uint8
 	for _, v := range r.Occupants {
 		if v != nil {
-			num ++
+			num++
 		}
 	}
 	return num

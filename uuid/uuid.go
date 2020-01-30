@@ -92,7 +92,7 @@ func MD5(data string) string {
 	return hex.EncodeToString(m[:])
 }
 func main() {
-	fmt.Println(MD5("c1f69262850da946" + "dc483e80a7a0bd9ef71d8cf973673924"))
+	fmt.Println(MD5("4ff811a9ecd47dc8" + "123456"))
 	return
 	inviteCode := code{
 		base: "HVE8S2DZX9C7P5IK3MJUAR4WYLTN6BGQ",

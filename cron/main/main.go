@@ -2,18 +2,24 @@ package main
 
 import (
 	"fmt"
-	"github.com/robfig/cron/v3"
 )
 
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
 func main() {
-	c := cron.New()
-	id, e := c.AddFunc("@every 1s", func() { fmt.Println("Every hour on the half hour") })
-	fmt.Println(id,e)
-	c.AddFunc("30 3-6,20-23 * * *", func() { fmt.Println(".. in the range 3-6am, 8-11pm") })
-	c.AddFunc("CRON_TZ=Asia/Tokyo 30 04 * * *", func() { fmt.Println("Runs at 04:30 Tokyo time every day") })
-	c.AddFunc("@hourly",      func() { fmt.Println("Every hour, starting an hour from now") })
-	c.AddFunc("@every 1h30m", func() { fmt.Println("Every hour thirty, starting an hour thirty from now") })
-	c.Start()
-	defer c.Stop()
-	select{}
+	var x uintptr
+	fmt.Println(x)
+	fmt.Sprintf("1%s2", "fdsafasd")
+	//https://xjwl-qp.oss-accelerate.aliyuncs.com/img/head_1.jpg
+	//var wireteString = ""
+	//for i := 1; i <= 2180; i++ {
+	//	wireteString += strconv.Itoa(i) + "\n"
+	//}
+	//
+	//var d1 = []byte(wireteString)
+	//err2 := ioutil.WriteFile("./output2.txt", d1, 0666) //写入文件(字节数组)
+	//check(err2)
 }

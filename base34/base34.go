@@ -82,7 +82,7 @@ func Base34ToNum(str []byte)(uint64, error){
 func main() {
 	InitBaseMap()
 	fmt.Printf("len(baseStr):%d, len(base):%d\n", len(baseStr), len(base))
-	res := Base34(24)
+	res := Base34(20)
 	fmt.Printf("===============base:24->%s, %d\n", string(res), len(res))
 	num, err := Base34ToNum(res)
 	if err == nil {
