@@ -13,6 +13,7 @@ require (
 	github.com/lestrrat-go/file-rotatelogs v2.2.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.0 // indirect
 	github.com/lib/pq v1.0.0
+	github.com/marspere/goencrypt v1.0.4
 	github.com/micro/go-micro v1.13.2
 	github.com/pkg/errors v0.8.1
 	github.com/robfig/cron/v3 v3.0.0

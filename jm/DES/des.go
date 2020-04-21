@@ -6,12 +6,27 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	"github.com/marspere/goencrypt"
 	"log"
 )
 
 func main() {
-	key := []byte("2fa6c1e9")
-	str := "I love this beautiful world!"
+
+	// key为12345678
+	// iv为空
+	// 采用ECB分组模式
+	// 采用pkcs5padding填充模式
+	// 输出结果使用base64进行加密
+	cipher := goencrypt.NewDESCipher([]byte("12345678"), []byte(""), goencrypt.ECBMode, goencrypt.Pkcs7, goencrypt.PrintBase64)
+	cipherText, err := cipher.DESEncrypt([]byte("hello world"))
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(cipherText)
+
+	key := []byte("        ")
+	str := "hello world"
 	strEncrypted, err := DesEncrypt(str, key)
 	if err != nil {
 		log.Fatal(err)

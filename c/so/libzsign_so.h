@@ -1,0 +1,1 @@
+int do_so_func(char*[]);
