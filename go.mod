@@ -63,5 +63,6 @@ require (
 	golang.org/x/sys v0.0.0-20201119102817-f84b799fce68 // indirect
 	google.golang.org/appengine v1.6.5 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 	xorm.io/core v0.7.2 // indirect
 )
