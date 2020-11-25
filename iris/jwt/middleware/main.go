@@ -8,7 +8,7 @@ import (
 
 var (
 	sigKey = []byte("signature_hmac_secret_shared_key")
-	encKey = []byte("GCM_AES_256_secret_shared_key_32")
+	// encKey = []byte("GCM_AES_256_secret_shared_key_32")
 )
 
 type fooClaims struct {
@@ -45,9 +45,8 @@ func main() {
 	// http://localhost:8888/protected?token=$token (or Authorization: Bearer $token)
 	// http://localhost:8888/protected/logout?token=$token
 	// http://localhost:8888/protected?token=$token (401)
-	_ = app.Listen(":8888")
+	app.Listen(":8888")
 }
-
 func generateToken(signer *jwt.Signer) iris.Handler {
 	return func(ctx iris.Context) {
 		claims := fooClaims{Foo: "bar"}
@@ -58,7 +57,7 @@ func generateToken(signer *jwt.Signer) iris.Handler {
 			return
 		}
 
-		_, _ = ctx.Write(token)
+		ctx.Write(token)
 	}
 }
 
@@ -72,14 +71,14 @@ func protected(ctx iris.Context) {
 	expiresAtString := standardClaims.ExpiresAt().Format(ctx.Application().ConfigurationReadOnly().GetTimeFormat())
 	timeLeft := standardClaims.Timeleft()
 
-	_, _ = ctx.HTML("foo=%s\nexpires at: %s\ntime left: %s\n", claims.Foo, expiresAtString, timeLeft)
+	ctx.Writef("foo=%s\nexpires at: %s\ntime left: %s\n", claims.Foo, expiresAtString, timeLeft)
 }
 
 func logout(ctx iris.Context) {
 	err := ctx.Logout()
 	if err != nil {
-		_, _ = ctx.WriteString(err.Error())
+		ctx.WriteString(err.Error())
 	} else {
-		_, _ = ctx.HTML("token invalidated, a new token is required to access the protected API")
+		ctx.Writef("token invalidated, a new token is required to access the protected API")
 	}
 }
