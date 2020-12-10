@@ -30,12 +30,14 @@ require (
 	github.com/iris-contrib/pongo2 v0.0.1 // indirect
 	github.com/kataras/iris v11.1.1+incompatible
 	github.com/kataras/iris/v12 v12.2.0-alpha.0.20201117050536-962ffd67721a
+	github.com/labstack/gommon v0.3.0
 	github.com/lestrrat-go/file-rotatelogs v2.2.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.0 // indirect
 	github.com/lib/pq v1.8.0
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/marspere/goencrypt v1.0.4
-	github.com/mattn/go-colorable v0.1.8 // indirect
+	github.com/mattn/go-colorable v0.1.8
+	github.com/mattn/go-isatty v0.0.12
 	github.com/mattn/go-runewidth v0.0.9 // indirect
 	github.com/micro/go-micro v1.13.2
 	github.com/mitchellh/mapstructure v1.3.3 // indirect
@@ -55,6 +57,7 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/viper v1.7.1 // indirect
 	github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271
+	github.com/valyala/fasttemplate v1.2.1
 	go.starlark.net v0.0.0-20201118183435-e55f603d8c79 // indirect
 	go.uber.org/zap v1.13.0
 	golang.org/x/arch v0.0.0-20201008161808-52c3e6f60cff // indirect

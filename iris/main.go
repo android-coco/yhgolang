@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/kataras/iris"
 )
 
@@ -15,8 +16,8 @@ func main() {
 	app.Get("/test", before, mainHandler, func(ctx iris.Context) {
 		value := ctx.FormValue("info")
 		ctx.JSON(iris.Map{"hello": "iris MVC"})
-		fmt.Println("test:",value)
-	},after)
+		fmt.Println("test:", value)
+	}, after)
 	_ = app.Run(iris.Addr(":8888"))
 }
 
