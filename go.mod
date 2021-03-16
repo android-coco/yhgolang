@@ -1,6 +1,6 @@
 module yhgolang
 
-go 1.13
+go 1.16
 
 require (
 	github.com/CloudyKit/jet/v3 v3.0.0 // indirect
