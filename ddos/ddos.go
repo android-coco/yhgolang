@@ -69,7 +69,7 @@ func (d *DDoS) Run() {
 // Stop - stop DDoS attack
 func (d *DDoS) Stop() {
 	for i := 0; i < d.amountWorkers; i++ {
-		(*d.stop) <- true
+		*d.stop <- true
 	}
 	close(*d.stop)
 }

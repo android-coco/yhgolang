@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "/grpc";
+option java_multiple_files = true;
+option java_package = "com.yh.test";
+option java_outer_classname = "HelloService";
+
+package grpc;
+
+message String {
+    string value = 1;
+}
+
+service HelloService {
+    rpc Hello (String) returns (String);
+}

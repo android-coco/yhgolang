@@ -1,12 +1,112 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
 func updateSlice(s []int) {
 	s[0] = 100
 }
 
+var mu sync.Mutex
+var chain string
+
+func A() {
+	mu.Lock()
+	defer mu.Unlock()
+	chain = chain + " -->A"
+	B()
+}
+func B() {
+	mu.Lock()
+	defer mu.Unlock()
+	chain = chain + " -->B"
+	C()
+}
+
+func C() {
+	mu.Lock()
+	defer mu.Unlock()
+	chain = chain + " -->C"
+}
+
+//求交集
+func intersect(slice1, slice2 []int) []int {
+	m1 := make(map[int]int)
+	m2 := make([]int, 0)
+	tmp := make(map[int]int)
+	for _, v := range slice1 {
+		m1[v]++
+	}
+
+	for _, v := range slice2 {
+		if _, ok := tmp[v]; ok {
+			continue
+		}
+		times, _ := m1[v]
+		tmp[v] = 0
+		if times == 1 {
+			m2 = append(m2, v)
+		}
+	}
+	return m2
+}
+
+type query func(string) string
+
+func exec(name string,vs ...query)string  {
+	ch := make(chan string)
+	fn := func(i int) {
+		ch <- vs[i](name)
+	}
+	for i,_:=range vs {
+		go fn(i)
+	}
+	return  <- ch
+}
+
+func proc()  {
+	panic("ok")
+}
 func main() {
+
+	go func() {
+		for {
+			t := time.Tick(1 * time.Second)
+			select {
+			case <-t:
+				defer proc()
+				if r := recover(); r != nil {
+					fmt.Println("recover...:", r)
+				}
+				fmt.Println("11")
+			}
+		}
+	}()
+	select {
+
+	}
+	ret:= exec("111",func(n string)string{
+		return n + "func1"
+	},func(n string)string{
+		return n + "func2"
+	},func(n string)string{
+		return n + "func3"
+	},func(n string)string{
+		return n + "func4"
+	})
+	fmt.Print(ret)
+
+	mums1 := []int{4, 9, 5}
+	mums2 := []int{9, 4, 8, 4}
+	fmt.Print(intersect(mums1, mums2))
+	return
+	chain = "main"
+	A()
+	fmt.Print(chain)
+	return
 	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
 
 	fmt.Println("arr[2:6] =", arr[2:6])
