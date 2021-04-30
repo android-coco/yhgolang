@@ -12,7 +12,6 @@ func main() {
 	app.Get("/contact", func(ctx iris.Context) {
 		_, _ = ctx.HTML("<h1> Hello from /contact </h1>")
 	})
-
 	app.Get("/test", before, mainHandler, func(ctx iris.Context) {
 		value := ctx.FormValue("info")
 		ctx.JSON(iris.Map{"hello": "iris MVC"})

@@ -1,0 +1,12 @@
+[INFO] 2020/11/23 23:04 Request path: /ping
+Now listening on: http://localhost:8888
+Application started. Press CMD+C to shut down.
+[INFO] 2020/11/23 23:06 Request path: /ping
+[INFO] 2020/11/23 23:06 Request path: /ping
+[INFO] 2020/11/23 23:06 Request path: /ping
+[INFO] 2020/11/23 23:06 Request path: /ping
+[INFO] 2020/11/23 23:06 Request path: /ping
+[INFO] 2020/11/23 23:06 Request path: /ping
+Now listening on: http://localhost:8888
+Application started. Press CMD+C to shut down.
+[ERRO] 2020/11/23 23:14 http: Server closed

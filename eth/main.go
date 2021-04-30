@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"golang.org/x/crypto/sha3"
 	"strings"
+
+	"golang.org/x/crypto/sha3"
 )
 
 func TextHash(data []byte) []byte {
@@ -18,5 +19,5 @@ func TextAndHash(data []byte) ([]byte, string) {
 }
 
 func main() {
-	fmt.Println(strings.Compare("Jason","As"))
+	fmt.Println(strings.Compare("Jason", "As"))
 }

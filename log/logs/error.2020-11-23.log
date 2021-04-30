@@ -1,0 +1,4 @@
+{"level":"ERROR","ts":"2020-11-23 00:13:39","file":"log/main.go:9","msg":"1111"}
+{"level":"ERROR","ts":"2020-11-23 00:14:15","file":"log/main.go:10","msg":"1111"}
+{"level":"ERROR","ts":"2020-11-23 00:15:09","file":"log/main.go:10","msg":"1111"}
+{"level":"ERROR","ts":"2020-11-23 00:15:35","file":"log/main.go:10","msg":"1111"}

@@ -10,21 +10,41 @@ import (
 var randomColor []int32
 var mu sync.Mutex // guards balance
 
+var (
+	count int
+	rwLock sync.RWMutex
+)
+
+func RwLockDemo()  {
+	for i := 0; i < 2; i++ {
+		go func() {
+			for i := 1000000; i > 0; i-- {
+				rwLock.Lock()
+				count ++
+				rwLock.Unlock()
+			}
+			fmt.Println(count)
+		}()
+	}
+
+	fmt.Scanf("\n")  //等待子线程全部结束
+}
 
 func Deposit() {
 	mu.Lock()
+	defer mu.Unlock()
 	randomColor = RandomColor()
-	mu.Unlock()
+
 }
 
 func Balance() []int32 {
 	mu.Lock()
+	defer mu.Unlock()
 	b := randomColor
-	mu.Unlock()
 	return b
 }
 func main() {
-
+	RwLockDemo()
 	for {
 		go func() {
 			Deposit()

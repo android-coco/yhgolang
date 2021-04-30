@@ -1,0 +1,3 @@
+{"level":"INFO","ts":"2020-11-23 00:14:15","file":"log/main.go:12","msg":"11{1 15 0 2 <nil>}"}
+{"level":"INFO","ts":"2020-11-23 00:15:09","file":"log/main.go:12","msg":"11{1 15 0 2 <nil>}"}
+{"level":"INFO","ts":"2020-11-23 00:15:35","file":"log/main.go:12","msg":"11{1 15 0 2 <nil>}"}
