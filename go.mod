@@ -42,6 +42,7 @@ require (
 	github.com/micro/go-micro v1.13.2
 	github.com/mitchellh/mapstructure v1.3.3 // indirect
 	github.com/mozillazg/request v0.8.0
+	github.com/panjf2000/ants/v2 v2.4.4 // indirect
 	github.com/parnurzeal/gorequest v0.2.16
 	github.com/pelletier/go-toml v1.8.1 // indirect
 	github.com/peterh/liner v1.2.0 // indirect

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 	"net/http/httputil"
 	"time"
@@ -110,6 +111,33 @@ type Branding struct {
 }
 
 func main() {
+
+	//2021-12-01
+	//随机后缀 80
+	sj := 2021 + 12 + 01 + 80
+	r := rand.New(rand.NewSource(int64(sj)))
+	//几位就几个9
+	sjm := r.Intn(99999999)
+	fmt.Println(sjm)
+
+
+	//
+	//去当前时间和日期
+	//1年365天    10年3600天  100年36000
+	//当前年月日
+	currYear := 2021
+	currMoth := 01
+	currDay := 01
+	var sjNew int64
+	//30 要按照当前的月是多少天来 月和年自己实现
+	for i := currDay; i < 30; i++ {
+		sjNew = int64(currYear + currMoth + 1 + 80)
+		r := rand.New(rand.NewSource(sjNew))
+		if r.Intn(99999999) == sjm {
+			break
+		}
+	}
+	return
 	//f := Get("http://www.baidu.com")
 	//fmt.Println(f)
 	//fmt.Println(strings.NewReader("123").Len())
@@ -133,18 +161,20 @@ func main() {
 	//fmt.Println(time.Now().Hour())
 	Post("")
 }
+
 type eosParkReq struct {
-	Id            string `json:"id"`
-	Json  bool `json:"json"`
+	Id   string `json:"id"`
+	Json bool   `json:"json"`
 }
+
 func Post(url string) {
 	eosReq := eosParkReq{
-		Id:"cce517a177944c32721a6effcbbd262a5aa9607a89e2d7e268cfc3f3165b90be",
-		Json:true,
+		Id:   "cce517a177944c32721a6effcbbd262a5aa9607a89e2d7e268cfc3f3165b90be",
+		Json: true,
 	}
 	body, err := SendRequest("Post", eosReq, "https://mainnet-history.meet.one/v1/history/get_transaction")
 
-	fmt.Println(string(body),err)
+	fmt.Println(string(body), err)
 }
 func Get(url string) string {
 	resp, err := http.Get(url)
@@ -198,8 +228,10 @@ func timeSubDays(t1, t2 time.Time) int {
 		}
 	}
 }
+
 var EOSClient = &http.Client{
 }
+
 func SendRequest(method string, t_req interface{}, req_url string) (body []byte, err error) {
 
 	//通常是采用strings.NewReader函数，将一个string类型转化为io.Reader类型，或者bytes.NewBuffer函数，将[]byte类型转化为io.Reader类型。
