@@ -11,6 +11,7 @@ var (
 	ss = "kkk"
 	bb = true
 )
+
 func variableZeroValue() {
 	var a int
 	var s string
@@ -82,6 +83,10 @@ func enums() {
 }
 
 func main() {
+	fmt.Println(increaseA())
+	fmt.Println(increaseB())
+	fmt.Println(f3())
+	return
 	fmt.Println("Hello world")
 	variableZeroValue()
 	variableInitialValue()
@@ -93,8 +98,71 @@ func main() {
 	triangle()
 	consts()
 	enums()
+
+	a := [5]int{1, 2, 3, 4, 5}
+	t := a[3:4:4]
+	fmt.Println(t[0])
+
+	s := make([]int, 5)
+	s = append(s, 1, 2, 3)
+	fmt.Println(s)
+
+	s = make([]int, 0)
+	s = append(s, 1, 2, 3, 4)
+	fmt.Println(s)
+
+	sn1 := struct {
+		age  int
+		name string
+	}{age: 11, name: "qq"}
+	sn2 := struct {
+		age  int
+		name string
+	}{age: 11, name: "qq"}
+	if sn1 == sn2 {
+		fmt.Println("sn1 == sn2")
+	}
+
+	//sm1 := struct {
+	//	age int
+	//	m   map[string]string
+	//}{age: 11, m: map[string]string{"a": "1"}}
+	//sm2 := struct {
+	//	age int
+	//	m   map[string]string
+	//}{age: 11, m: map[string]string{"a": "1"}}
+	//if sm1 == sm2 {
+	//	fmt.Println("sm1 == sm2")
+	//}
 }
 
+func increaseA() int {
+	var i int
+	defer func() {
+		i++
+	}()
+	return i
+}
+func increaseB() (r int) {
+	defer func() {
+		r++
+	}()
+	return r
+}
+
+func f1() (r int) {
+	defer func() {
+		r++
+	}()
+	return 0
+}
+
+func f3() (r int) {
+	defer func(r int) {
+		r = r + 5
+	}(r)
+	return 1
+}
 
 
 

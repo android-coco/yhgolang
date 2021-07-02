@@ -14,13 +14,36 @@ func check(e error) {
 
 var c = make(chan int, 10)
 var x sync.Map
+
+type y struct {
+}
+
+func (*y) Get() string {
+	return "y"
+}
+
+type I interface {
+	Get() string
+}
+
+var (
+	_ I = &y{}
+)
+
+//用在变量
+//type T struct{}
+//var _ I = T{}
+//
+//其中 I为interface
+//上面用来判断 type T是否实现了I,用作类型断言，如果T没有实现借口I，则编译错误.
+
 func main() {
-	x.Store("1",1)
-	x.Store("2",1)
-	x.Store("33",1)
-	x.Store("4",1)
+	x.Store("1", 1)
+	x.Store("2", 1)
+	x.Store("33", 1)
+	x.Store("4", 1)
 	x.Range(func(key, value interface{}) bool {
-		fmt.Println(key,value)
+		fmt.Println(key, value)
 		return false
 	})
 	return
@@ -45,7 +68,7 @@ func main() {
 			case v := <-c:
 				fmt.Println("====", len(c), v)
 			}
-			fmt.Println("===1111",10 % 4)
+			fmt.Println("===1111", 10%4)
 		}
 
 	}()

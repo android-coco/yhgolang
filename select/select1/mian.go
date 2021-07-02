@@ -11,11 +11,25 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
 func main() {
-	test1()
+	var wg sync.WaitGroup
+
+	for i := 0; i < 100; i++ {
+		wg.Add(1)
+		c2 := make(chan string)
+		go func(c2 chan string) {
+			defer wg.Done()
+			time.Sleep(1 * time.Millisecond)
+			c2 <- "11"
+		}(c2)
+		T(c2)
+		fmt.Println("====",i)
+	}
+	wg.Wait()
 	return
 	ch := make(chan int)
 	quit := make(chan int)
@@ -88,4 +102,13 @@ func test1() {
 		}
 	}
 
+}
+func T(c2  chan string)  {
+	timeTimer := time.NewTimer(200 * time.Millisecond)
+	select {
+	case data := <-c2:
+		fmt.Println("=====",data)
+	case <-timeTimer.C:
+		fmt.Println("超时")
+	}
 }

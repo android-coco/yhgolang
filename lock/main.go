@@ -44,6 +44,27 @@ func Balance() []int32 {
 	return b
 }
 func main() {
+	x := make(chan int64)
+	go func() {
+		for {
+			time.Sleep(1 * time.Second)
+			x <- time.Now().UnixNano()
+			x <- time.Now().UnixNano()
+			fmt.Println("data",len(x),cap(x))
+		}
+	}()
+	go func() {
+		for {
+			time.Sleep(1 * time.Second)
+			select {
+			case data :=<- x:
+				fmt.Println(data,len(x),cap(x))
+			}
+		}
+	}()
+	select {
+	}
+	return
 	RwLockDemo()
 	for {
 		go func() {
